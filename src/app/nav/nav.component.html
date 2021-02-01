@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row bg-dark mt-1 p-1">
+    <div class="col-6">
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link text-white" routerLink="/"> Home </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link  text-white" routerLink="/tickets"> Tickets </a>
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="isLogged" class="col-6 text-right">
+      <button  (click)="onLogout()" type="button" class="btn btn-light"> logout</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<p><strong>Total: {{ticketList?.length}} records</strong></p>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th class="text-center" colspan="2" style="width: 1%;">Options</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let ticket of ticketList">
+      <td>#{{ticket.id}}-{{ticket.name}}</td>
+      <td>{{ticket.description}}</td>
+      <td><a class="btn btn-dark" routerLink="/tickets/{{ticket.id}}/view">View</a></td>
+      <td><a class="btn btn-primary" routerLink="/tickets/{{ticket.id}}/update">Update</a></td>
+      <td><a class="btn btn-danger" (click)="onDelete(ticket)">Delete</a></td>
+    </tr>
+  </tbody>
+</table>
+<div class="row">
+  <div class="col-12 text-right">
+    <div class="form-group">
+      <a class="btn btn-primary btn-block" routerLink="/tickets/create">Add Ticket</a>
+    </div>
+  </div>
+</div>

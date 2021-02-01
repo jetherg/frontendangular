@@ -1,0 +1,40 @@
+<form [formGroup]="ticketForm" (ngSubmit)="onSubmit()">
+
+  <div class="row">
+    <div class="col-12">
+      <div class="form-group">
+        <div *ngIf="!ticketForm.get('name').valid && ticketForm.get('name').touched" class="alert alert-danger">
+          Name Required
+        </div>
+        <label for="name"> Name</label>
+        <input formControlName="name" type="text" class="form-control"
+          [ngClass]="ticketForm.get('name').invalid ? 'is-invalid' : ''" />
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="form-group">
+        <div *ngIf="!ticketForm.get('description').valid && ticketForm.get('description').touched"
+          class="alert alert-danger">
+          Description Required
+        </div>
+        <label for="description"> Description</label>
+        <input formControlName="description" type="text" class="form-control"
+          [ngClass]="ticketForm.get('description').invalid ? 'is-invalid' : ''" />
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-6 text-left">
+      <a class="btn btn-dark" routerLink="/tickets">Ticket List</a>
+    </div>
+    <div class="col-6 text-right">
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary"> Submit</button>
+      </div>
+    </div>
+  </div>
+</form>
